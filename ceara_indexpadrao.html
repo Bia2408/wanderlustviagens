@@ -1,0 +1,102 @@
+
+<!DOCTYPE html>
+
+<html lang="pt-br">
+<head>
+<meta charset="utf-8"/>
+<title>Wanderlust - Ceará</title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<style>
+    body { font-family: 'Segoe UI', sans-serif; background-color: #fff9f4; color: #333; margin: 0; padding: 20px; }
+    header { text-align: center; background-color: #ffeaa7; padding: 20px; border-radius: 12px; }
+    section { margin: 30px 0; padding: 20px; background: #ffffff; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.05); }
+    h1, h2 { color: #5c3d99; }
+    ul { padding-left: 20px; }
+  </style>
+<link href="style.css" rel="stylesheet"/></head>
+<body class="main-content">
+<header>
+<h1>Viagem Inesquecível ao Ceará</h1>
+<p>Fortaleza, Jericoacoara e Canoa Quebrada | 7 Dias / 6 Noites</p>
+</header>
+<main>
+<section>
+<h2>✈️ Voo</h2>
+<p><strong>Companhia:</strong> LATAM Airlines<br/>
+<strong>Aeroporto de partida:</strong> Guarulhos (GRU)<br/>
+<strong>Aeroporto de chegada:</strong> Aeroporto Internacional de Fortaleza - Pinto Martins</p>
+</section>
+<section>
+<h2>📅 Roteiro</h2>
+<ul>
+<li><strong>Dia 1:</strong> Chegada em Fortaleza – Hospedagem no Praiano Hotel e passeio na Beira-Mar</li>
+<li><strong>Dia 2:</strong> Praia do Futuro, Mercado Central e Dragão do Mar</li>
+<li><strong>Dia 3:</strong> Passeio em Cumbuco com buggy nas dunas</li>
+<li><strong>Dia 4:</strong> Chegada a Jericoacoara – Pousada Carcará e pôr do sol na duna</li>
+<li><strong>Dia 5:</strong> Pedra Furada, Lagoa Azul e Lagoa do Paraíso</li>
+<li><strong>Dia 6:</strong> Canoa Quebrada – Pousada Refúgio e passeio na Broadway</li>
+<li><strong>Dia 7:</strong> Retorno a Fortaleza e voo de volta</li>
+</ul>
+</section>
+<section>
+<h2>💰 Estimativa de Custos (Casal)</h2>
+<ul>
+<li>Passagens aéreas: R$ 2.400</li>
+<li>Hospedagem total: R$ 2.750</li>
+<li>Passeios e transportes: R$ 600</li>
+<li>Alimentação e extras: R$ 2.500</li>
+<li><strong>Total: R$ 8.250</strong></li>
+</ul>
+</section>
+<section>
+<h2>✅ O que está incluso</h2>
+<ul>
+<li>Hospedagem com café da manhã</li>
+<li>Passagens de ida e volta</li>
+<li>Passeios principais e traslados</li>
+</ul>
+</section>
+<section class="simulador" style="background-color:#f6f8fa; padding: 2em; border-radius: 10px; max-width: 600px; margin: auto; box-shadow: 0 0 20px rgba(0,0,0,0.05); font-family: 'Segoe UI', sans-serif;">
+<h2 style="text-align:center; color:#5c3d99;">🗓️ Simule sua Viagem</h2>
+<div style="display: flex; flex-wrap: wrap; gap: 1em; justify-content: center;">
+<div>
+<label for="entrada" style="font-weight:600;">Data de Entrada</label><br/>
+<input id="entrada" name="entrada" onchange="calcularValor()" style="padding: 0.5em; border-radius: 5px; border: 1px solid #ccc;" type="date"/>
+</div>
+<div>
+<label for="saida" style="font-weight:600;">Data de Saída</label><br/>
+<input id="saida" name="saida" onchange="calcularValor()" style="padding: 0.5em; border-radius: 5px; border: 1px solid #ccc;" type="date"/>
+</div>
+<div>
+<label for="transporte" style="font-weight:600;">Transporte</label><br/>
+<select id="transporte" onchange="calcularValor()" style="padding: 0.5em; border-radius: 5px; border: 1px solid #ccc;">
+<option value="carro">Carro</option>
+<option value="aviao">Avião</option>
+</select>
+</div>
+</div>
+<div style="margin-top: 1.5em; text-align: center; font-size: 1.2em; font-weight: 600;">
+      💰 Valor Estimado: <span id="resultado" style="color: #5c3d99;">R$ 0,00</span>
+</div>
+</section>
+<script>
+    function calcularValor() {
+      const entrada = new Date(document.getElementById('entrada').value);
+      const saida = new Date(document.getElementById('saida').value);
+      const transporte = document.getElementById('transporte').value;
+
+      if (entrada && saida && saida > entrada) {
+        const dias = (saida - entrada) / (1000 * 60 * 60 * 24);
+        let passagem = transporte === "aviao" ? 1200.0 : 0;
+        let carro = transporte === "carro" ? 0 * dias : 0;
+        let diariaHotel = 229.16666666666666 * dias;
+        let extras = 1550.0;
+
+        let total = passagem + carro + diariaHotel + extras;
+        document.getElementById('resultado').innerText = "R$ " + total.toFixed(2).replace('.', ',');
+      } else {
+        document.getElementById('resultado').innerText = "R$ 0,00";
+      }
+    }
+  </script>
+</main></body></html>

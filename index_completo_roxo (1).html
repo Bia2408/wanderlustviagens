@@ -1,0 +1,217 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Wanderlust - Início</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet"/>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #f5ebdd;
+      color: #333;
+    }
+    header {
+      background: #87ceeb;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+    header a {
+      text-decoration: none;
+      color: #222;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    header a:hover {
+      color: #c3b1e1;
+    }
+    .hero {
+      margin-top: 80px;
+      padding: 60px 20px;
+      background: #fffacd;
+      text-align: center;
+      color: #7e57c2;
+    }
+    .hero h1 {
+      font-size: 3em;
+    }
+    .hero p {
+      font-size: 1.4em;
+    }
+    .texto-agencia {
+      padding: 40px 20px;
+      text-align: center;
+      background: white;
+    }
+    .texto-agencia p {
+      max-width: 800px;
+      margin: 0 auto 20px;
+      line-height: 1.6em;
+    }
+    .avaliacoes {
+      background: #fff;
+      padding: 40px 20px;
+      text-align: center;
+      overflow: hidden;
+      position: relative;
+    }
+    .avaliacoes h2 {
+      color: #7e57c2;
+    }
+    .carrossel-container {
+      width: 100%;
+      overflow: hidden;
+    }
+    .carrossel {
+      display: flex;
+      animation: deslizar 25s linear infinite;
+    }
+    .avaliacao {
+      min-width: 100%;
+      flex: 0 0 100%;
+      padding: 10px;
+      background: #c3b1e1;
+      border-radius: 10px;
+    }
+    @keyframes deslizar {
+      0% { transform: translateX(0); }
+      20% { transform: translateX(-100%); }
+      40% { transform: translateX(-200%); }
+      60% { transform: translateX(-300%); }
+      80% { transform: translateX(-400%); }
+      100% { transform: translateX(0); }
+    }
+    .pacotes {
+      padding: 40px 20px;
+      text-align: center;
+    }
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+    .card {
+      background: #e9a9b4;
+      padding: 20px;
+      border-radius: 12px;
+      text-align: center;
+      font-weight: bold;
+      width: 200px;
+      transition: 0.3s;
+    }
+    .card:hover {
+      background: #c3b1e1;
+    }
+    .card a {
+      color: #222;
+      text-decoration: none;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #fffacd;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <a href="#inicio">Início</a>
+  <a href="#pacotes">Nossos Pacotes</a>
+  <a href="#sobre">Sobre Nós</a>
+  <a href="#avaliacoes">Atendimento</a>
+</header>
+
+<section class="hero" id="inicio">
+  <h1>Wanderlust</h1>
+  <p>O seu coração sonha, a Wanderlust te leva</p>
+</section>
+
+<section class="texto-agencia" id="sobre">
+  <p>Na Wanderlust, acreditamos que cada viagem deve ser mais do que um simples destino — deve ser uma experiência inesquecível. Por isso, cuidamos de cada detalhe com carinho, atenção e profissionalismo, para que você só se preocupe com uma coisa: aproveitar cada momento.</p>
+  <p>Seja explorando paisagens naturais, mergulhando em novas culturas ou simplesmente relaxando em um paraíso particular, nós tornamos o seu sonho realidade. Com roteiros personalizados, suporte completo e uma equipe apaixonada por viagens, garantimos que sua jornada seja leve, segura e cheia de descobertas.</p>
+  <p>Escolha a Wanderlust e descubra o que é viajar com quem realmente entende de experiências. O mundo está te esperando — e a gente também.</p>
+</section>
+
+<section class="avaliacoes" id="avaliacoes">
+  <h2>Experiências dos nossos clientes</h2>
+  <div class="carrossel-container">
+    <div class="carrossel">
+      <div class="avaliacao">João ⭐⭐⭐⭐⭐<br>Melhor viagem da minha vida!</div>
+      <div class="avaliacao">Maria ⭐⭐⭐⭐<br>Suporte excelente e paisagens lindas!</div>
+      <div class="avaliacao">Carlos ⭐⭐⭐⭐⭐<br>Viagem perfeita e sem preocupações.</div>
+      <div class="avaliacao">Ana ⭐⭐⭐⭐<br>Amei cada detalhe do atendimento!</div>
+      <div class="avaliacao">Lucas ⭐⭐⭐⭐⭐<br>Recomendo para todos os meus amigos!</div>
+    </div>
+  </div>
+</section>
+
+<section class="pacotes" id="pacotes">
+  <h2>Nossos Pacotes</h2>
+  <div class="cards">
+    <div class="card"><a href="belohorizonte_indexpadrao.html" target="_blank">Belo Horizonte</a></div>
+    <div class="card"><a href="gramado_indexpadrao.html" target="_blank">Gramado</a></div>
+    <div class="card"><a href="riodejaneiro_indexpadrao.html" target="_blank">Rio de Janeiro</a></div>
+    <div class="card"><a href="ceara_indexpadrao.html" target="_blank">Ceará</a></div>
+    <div class="card"><a href="bahia_indexpadrao.html" target="_blank">Bahia</a></div>
+    <div class="card"><a href="portodegalinhas_indexpadrao.html" target="_blank">Porto de Galinhas</a></div>
+    <div class="card"><a href="fernandodenoronha_indexpadrao.html" target="_blank">Fernando de Noronha</a></div>
+  </div>
+</section>
+
+<footer>
+  Atendimento Wanderlust © 2025
+</footer>
+
+
+<section id="sobre-nos" style="background-color: #fef9f9; padding: 60px 20px; text-align: center;">
+  <h2 style="color: #5c3d99; font-size: 2.5em; margin-bottom: 20px;">Sobre Nós</h2>
+  <p style="max-width: 800px; margin: auto; font-size: 1.1em; line-height: 1.6;">
+    Na <strong>Wanderlust</strong>, acreditamos que viajar é mais do que visitar lugares — é viver experiências inesquecíveis.
+    Nosso propósito é transformar o seu sonho em realidade, oferecendo pacotes personalizados, atendimento acolhedor e suporte em cada etapa da sua jornada.
+  </p>
+  <br>
+  <p style="max-width: 800px; margin: auto; font-size: 1.1em; line-height: 1.6;">
+    Com uma equipe apaixonada por explorar o mundo, cuidamos de todos os detalhes da sua viagem: do planejamento à volta para casa.
+    Seja qual for o destino, conte conosco para viver momentos únicos com conforto, segurança e muita inspiração.
+  </p>
+  <br><br>
+  <div style="max-width: 800px; margin: auto; text-align: left;">
+    <h3 style="color: #5c3d99;">Missão</h3>
+    <p>Nossa missão é proporcionar experiências de viagem únicas e transformadoras, que permitam às pessoas explorarem o Brasil com leveza, segurança e encantamento, promovendo o desenvolvimento pessoal, o bem-estar e o conhecimento cultural.</p>
+
+    <h3 style="color: #5c3d99;">Visão</h3>
+    <p>Ser referência nacional em turismo de experiências, reconhecida por conectar viajantes aos destinos brasileiros com sensibilidade, criatividade e compromisso humano.</p>
+
+    <h3 style="color: #5c3d99;">Valores</h3>
+    <ul style="line-height: 1.8;">
+      <li><strong>Encantamento:</strong> Criamos momentos que tocam o coração.</li>
+      <li><strong>Cuidado:</strong> O viajante está no centro de tudo que fazemos.</li>
+      <li><strong>Autenticidade:</strong> Valorizamos experiências reais, locais e conscientes.</li>
+      <li><strong>Diversidade:</strong> Celebramos cada canto, sotaque e pessoa do Brasil.</li>
+      <li><strong>Sustentabilidade:</strong> Agimos com responsabilidade social e ambiental.</li>
+      <li><strong>Inspiração:</strong> Acreditamos que viajar transforma quem somos.</li>
+    </ul>
+  </div>
+</section>
+
+
+<!-- Seção Atendimento -->
+<section id="atendimento" style="background-color:#2e2e2e; color:white; padding:40px 20px; text-align:center;">
+  <h2 style="color:#ffffff; font-size:28px;">Atendimento</h2>
+  <p style="margin:10px 0;">📞 Telefone: (11) 99999-9999</p>
+  <p style="margin:10px 0;">✉️ Email: contato@wanderlustviagens.com</p>
+  <p style="margin:10px 0;">📍 Localização: São Paulo, SP</p>
+  <p style="margin:10px 0;">📸 Instagram: <a href="https://www.instagram.com/wand.erlustviagens/" target="_blank" style="color:#a68ef9;">@wand.erlustviagens</a></p>
+</section>
+
+</body>
+</html>

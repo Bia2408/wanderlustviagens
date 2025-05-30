@@ -1,0 +1,126 @@
+
+<!DOCTYPE html>
+
+<html lang="pt-br">
+<head>
+<meta charset="utf-8"/>
+<title>Porto de Galinhas - Wanderlust</title>
+<style>
+    body { font-family: 'Segoe UI', sans-serif; margin: 0; padding: 0; background-color: #fefefe; color: #333; line-height: 1.6; }
+    header { background: #87ceeb; padding: 20px; text-align: center; font-size: 24px; font-weight: bold; color: #333; }
+    main { padding: 40px 20px; max-width: 900px; margin: auto; }
+    h2 { color: #7e57c2; }
+    section { margin-bottom: 40px; }
+    .simulador { background: #f9f9f9; padding: 20px; border-radius: 10px; }
+    table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+    th, td { border: 1px solid #ccc; padding: 10px; text-align: left; }
+    th { background-color: #f3e5f5; }
+    footer { text-align: center; padding: 20px; background: #fffacd; margin-top: 40px; }
+  </style>
+<link href="style.css" rel="stylesheet"/></head>
+<body class="main-content">
+<header>Porto de Galinhas - Pacote Completo</header>
+<main>
+<section>
+<h2>✈️ Voo</h2>
+<p>Voo: São Paulo → Recife (REC)</p>
+<ul>
+<li>Companhia aérea: GOL Linhas Aéreas</li>
+<li>Aeroportos de partida: Guarulhos (GRU) ou Congonhas (CGH)</li>
+<li>Duração média do voo: aproximadamente 3h</li>
+<li>Preço estimado (ida e volta): R$ 1.027 por pessoa</li>
+</ul>
+</section>
+<section>
+<h2>🚗 Transporte</h2>
+<p>Recife → Porto de Galinhas (cerca de 50 km, 1h20min):</p>
+<ul>
+<li>Aluguel de carro: R$ 95/dia</li>
+<li>Uber: cerca de R$ 150 por trecho</li>
+</ul>
+</section>
+<section>
+<h2>🏨 Hospedagem: Armação Resort</h2>
+<p>Beira-mar, a 2 km do centro. Resort com café da manhã incluso, piscinas, restaurante e Wi-Fi gratuito.</p>
+<p>Preço estimado da diária: R$ 950 para 2 pessoas</p>
+</section>
+<section>
+<h2>📍 Pontos Turísticos</h2>
+<ul>
+<li><strong>Piscinas Naturais:</strong> Gratuito (jangada: R$ 30), 25 min a pé</li>
+<li><strong>Praia de Muro Alto:</strong> Entrada livre, 11 min de carro</li>
+<li><strong>Pontal de Maracaípe:</strong> Passeio de jangada R$ 50, 35 min a pé</li>
+<li><strong>Projeto Hippocampus:</strong> Entrada R$ 10, 30 min a pé</li>
+</ul>
+</section>
+<section>
+<h2>💰 Estimativa de Custos (3 dias / 2 noites)</h2>
+<table>
+<tr><th>Item</th><th>Valor Estimado</th></tr>
+<tr><td>Passagem aérea</td><td>R$ 1.027</td></tr>
+<tr><td>Aluguel de carro (2 dias)</td><td>R$ 190</td></tr>
+<tr><td>Hospedagem (2 diárias)</td><td>R$ 1.900</td></tr>
+<tr><td>Ingressos para atrações</td><td>R$ 80</td></tr>
+<tr><td>Alimentação</td><td>R$ 320</td></tr>
+<tr><td>Combustível</td><td>R$ 140</td></tr>
+<tr><th>Total</th><th>R$ 3.657</th></tr>
+</table>
+</section>
+<section>
+<h2>🏡 Tipos de Quartos</h2>
+<ul>
+<li><strong>Standard:</strong> 16 m², até 4 pessoas, R$ 950, ar-condicionado, frigobar</li>
+<li><strong>Superior:</strong> 18 m², varanda e cortinas blackout, R$ 1.037</li>
+<li><strong>Master:</strong> 75 m², banheira, sala separada, R$ 5.610</li>
+</ul>
+</section>
+<section>
+<h2>📋 Diferenças entre as Categorias</h2>
+<p><strong>Standard:</strong> Econômico, com conforto básico</p>
+<p><strong>Superior:</strong> Mais espaço e vista para o jardim</p>
+<p><strong>Master:</strong> Luxo e sofisticação com hidromassagem</p>
+</section>
+<section class="simulador" style="background-color:#f6f8fa; padding: 2em; border-radius: 10px; max-width: 600px; margin: auto; box-shadow: 0 0 20px rgba(0,0,0,0.05); font-family: 'Segoe UI', sans-serif;">
+<h2 style="text-align:center; color:#5c3d99;">🗓️ Simule sua Viagem</h2>
+<div style="display: flex; flex-wrap: wrap; gap: 1em; justify-content: center;">
+<div>
+<label for="entrada" style="font-weight:600;">Data de Entrada</label><br/>
+<input id="entrada" name="entrada" onchange="calcularValor()" style="padding: 0.5em; border-radius: 5px; border: 1px solid #ccc;" type="date"/>
+</div>
+<div>
+<label for="saida" style="font-weight:600;">Data de Saída</label><br/>
+<input id="saida" name="saida" onchange="calcularValor()" style="padding: 0.5em; border-radius: 5px; border: 1px solid #ccc;" type="date"/>
+</div>
+<div>
+<label for="transporte" style="font-weight:600;">Transporte</label><br/>
+<select id="transporte" onchange="calcularValor()" style="padding: 0.5em; border-radius: 5px; border: 1px solid #ccc;">
+<option value="carro">Carro</option>
+<option value="aviao">Avião</option>
+</select>
+</div>
+</div>
+<div style="margin-top: 1.5em; text-align: center; font-size: 1.2em; font-weight: 600;">
+      💰 Valor Estimado: <span id="resultado" style="color: #5c3d99;">R$ 0,00</span>
+</div>
+</section>
+<script>
+    function calcularValor() {
+      const entrada = new Date(document.getElementById('entrada').value);
+      const saida = new Date(document.getElementById('saida').value);
+      const transporte = document.getElementById('transporte').value;
+
+      if (entrada && saida && saida > entrada) {
+        const dias = (saida - entrada) / (1000 * 60 * 60 * 24);
+        let passagem = transporte === "aviao" ? 1027 : 0;
+        let carro = transporte === "carro" ? 95 * dias : 0;
+        let diariaHotel = 950 * dias;
+        let extras = 540;
+
+        let total = passagem + carro + diariaHotel + extras;
+        document.getElementById('resultado').innerText = "R$ " + total.toFixed(2).replace('.', ',');
+      } else {
+        document.getElementById('resultado').innerText = "R$ 0,00";
+      }
+    }
+  </script>
+</main></body></html>

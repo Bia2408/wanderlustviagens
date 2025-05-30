@@ -1,0 +1,117 @@
+
+<!DOCTYPE html>
+
+<html lang="pt-br">
+<head>
+<meta charset="utf-8"/>
+<title>Wanderlust - Salvador</title>
+<style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fefefe;
+      color: #333;
+    }
+    header, main, section {
+      padding: 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+    h1, h2 {
+      color: #5c3d99;
+    }
+    section {
+      margin-bottom: 40px;
+    }
+    .simulador input, .simulador select {
+      padding: 5px;
+      margin: 5px 0;
+    }
+  </style>
+<link href="style.css" rel="stylesheet"/></head>
+<body class="main-content">
+<header>
+<h1>🌴 Viagem Inesquecível à Bahia</h1>
+<p><strong>Voo:</strong> São Paulo → Salvador (SSA)<br/>
+<strong>Companhia aérea:</strong> GOL Linhas Aéreas, LATAM Airlines ou Azul<br/>
+<strong>Aeroporto de partida:</strong> Guarulhos (GRU) ou Congonhas (CGH)<br/>
+<strong>Aeroporto de chegada:</strong> Aeroporto Internacional de Salvador (SSA)<br/>
+<strong>Duração:</strong> Aproximadamente 2h30min<br/>
+<strong>Preço estimado (ida e volta):</strong> R$ 480</p>
+</header>
+<main>
+<section>
+<h2>🏨 Hospedagem</h2>
+<p><strong>Hotel:</strong> Casa do Amarelindo – Pelourinho<br/>
+<strong>Descrição:</strong> Hotel boutique em casarão colonial, com vista para a Baía de Todos-os-Santos.<br/>
+<strong>Facilidades:</strong> Café da manhã incluso, piscina, restaurante, Wi-Fi gratuito.<br/>
+<strong>Preço estimado da diária:</strong> R$ 620</p>
+</section>
+<section>
+<h2>📍 Principais Pontos Turísticos</h2>
+<ul>
+<li><strong>Elevador Lacerda:</strong> gratuito</li>
+<li><strong>Pelourinho:</strong> gratuito (algumas atrações cobram até R$ 10)</li>
+<li><strong>Igreja e Convento de São Francisco:</strong> R$ 10</li>
+<li><strong>Farol da Barra:</strong> R$ 15</li>
+<li><strong>Praia do Flamengo:</strong> livre</li>
+<li><strong>Ilha de Itaparica:</strong> R$ 45 (ida e volta)</li>
+</ul>
+</section>
+<section>
+<h2>💰 Estimativa de Custos por Pessoa (3 dias / 2 noites)</h2>
+<ul>
+<li>Passagem aérea: R$ 480</li>
+<li>Aluguel de carro: R$ 190</li>
+<li>Hospedagem (2 diárias): R$ 1.240</li>
+<li>Ingressos para atrações: R$ 80</li>
+<li>Alimentação: R$ 320</li>
+<li>Combustível: R$ 140</li>
+<li><strong>Total estimado:</strong> R$ 2.450</li>
+</ul>
+</section>
+<section class="simulador" style="background-color:#f6f8fa; padding: 2em; border-radius: 10px; max-width: 600px; margin: auto; box-shadow: 0 0 20px rgba(0,0,0,0.05); font-family: 'Segoe UI', sans-serif;">
+<h2 style="text-align:center; color:#5c3d99;">🗓️ Simule sua Viagem</h2>
+<div style="display: flex; flex-wrap: wrap; gap: 1em; justify-content: center;">
+<div>
+<label for="entrada" style="font-weight:600;">Data de Entrada</label><br/>
+<input id="entrada" name="entrada" onchange="calcularValor()" style="padding: 0.5em; border-radius: 5px; border: 1px solid #ccc;" type="date"/>
+</div>
+<div>
+<label for="saida" style="font-weight:600;">Data de Saída</label><br/>
+<input id="saida" name="saida" onchange="calcularValor()" style="padding: 0.5em; border-radius: 5px; border: 1px solid #ccc;" type="date"/>
+</div>
+<div>
+<label for="transporte" style="font-weight:600;">Transporte</label><br/>
+<select id="transporte" onchange="calcularValor()" style="padding: 0.5em; border-radius: 5px; border: 1px solid #ccc;">
+<option value="carro">Carro</option>
+<option value="aviao">Avião</option>
+</select>
+</div>
+</div>
+<div style="margin-top: 1.5em; text-align: center; font-size: 1.2em; font-weight: 600;">
+      💰 Valor Estimado: <span id="resultado" style="color: #5c3d99;">R$ 0,00</span>
+</div>
+</section>
+<script>
+    function calcularValor() {
+      const entrada = new Date(document.getElementById('entrada').value);
+      const saida = new Date(document.getElementById('saida').value);
+      const transporte = document.getElementById('transporte').value;
+
+      if (entrada && saida && saida > entrada) {
+        const dias = (saida - entrada) / (1000 * 60 * 60 * 24);
+        let passagem = transporte === "aviao" ? 480 : 0;
+        let carro = transporte === "carro" ? 95 * dias : 0;
+        let diariaHotel = 620 * dias;
+        let extras = 540;
+
+        let total = passagem + carro + diariaHotel + extras;
+        document.getElementById('resultado').innerText = "R$ " + total.toFixed(2).replace('.', ',');
+      } else {
+        document.getElementById('resultado').innerText = "R$ 0,00";
+      }
+    }
+  </script>
+</main></body></html>
